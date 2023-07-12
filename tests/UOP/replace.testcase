@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="57">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.io.Read" name="Read" testItemId="1" title="Read: templates/text.txt=&gt;Contents">
+      <tags/>
+      <arguments>
+        <argument id="urlString">
+          <value class="url">templates/text.txt</value>
+        </argument>
+        <argument id="contentFormat">
+          <value class="value" valueClass="string">Text</value>
+        </argument>
+        <argument id="contentEncoding">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Contents</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="storeAs">
+          <value class="value" valueClass="string">Text</value>
+        </argument>
+      </arguments>
+      <parameterValueSources/>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Replace" name="Replace" testItemId="2" title="Replace: {Contents}=&gt;=&gt;replacement">
+      <tags/>
+      <arguments>
+        <argument id="input">
+          <value class="variable">
+            <path element="Contents"/>
+          </value>
+        </argument>
+        <argument id="find">
+          <value class="value" valueClass="string">Proone</value>
+        </argument>
+        <argument id="replacement">
+          <value class="value" valueClass="string">Provar</value>
+        </argument>
+        <argument id="caseInsensitive"/>
+        <argument id="resultName">
+          <value class="value" valueClass="string">replacement</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>

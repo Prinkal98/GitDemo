@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="1" title="Set Values: a">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">a</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="variable">
+                  <path element="num"/>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+  <params>
+    <param name="num" passwordVariableAllowed="true" title="Num">
+      <summary/>
+      <type>
+        <numericType>
+          <constraints>
+            <valueConstraint name="length">10</valueConstraint>
+            <valueConstraint name="decimalPlaces">2</valueConstraint>
+            <valueConstraint name="unsigned">false</valueConstraint>
+            <valueConstraint name="showSeparator">false</valueConstraint>
+          </constraints>
+        </numericType>
+      </type>
+    </param>
+  </params>
+  <outputParams>
+    <param name="a" passwordVariableAllowed="true" title="a">
+      <summary>The name of the value to be set.  May contain sub-values, e.g. 'Value1.SubValue1'.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="a"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="num"/>
+  </args>
+  <outputArgs>
+    <outputArgument id="a">
+      <name class="value" valueClass="string">a</name>
+    </outputArgument>
+  </outputArgs>
+</testCase>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="8">
+  <summary/>
+  <steps>
+    <caseCall testCaseId="325c17d0-f9c0-4dc5-a737-cf74a5ffbc1b" testCasePath="tests/Callable.testcase" testItemId="1">
+      <arguments>
+        <argument id="num">
+          <value class="value" valueClass="decimal">22</value>
+        </argument>
+      </arguments>
+      <outputArguments>
+        <outputArgument id="a">
+          <name class="value" valueClass="string">a</name>
+        </outputArgument>
+      </outputArguments>
+    </caseCall>
+  </steps>
+</testCase>
