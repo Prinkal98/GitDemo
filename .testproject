@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testProject selectedBrowserProviderDeviceName="Full Screen" selectedBrowserProviderName="Desktop" selectedEnvironment="test">
+<testProject selectedBrowserProviderDeviceName="Full Screen" selectedBrowserProviderName="Desktop">
   <title>/QuickGuide1/.testproject</title>
   <configPath>config</configPath>
   <testsPath>tests</testsPath>
@@ -24,7 +24,7 @@
         <connection id="f5be3faa-d9e9-4e8d-b694-6a4d2c66c501" name="trainingOrg">
           <summary/>
           <connectionUrls>
-            <connectionUrl secureStorageNodeId="e776f601-dc5a-42f2-ad89-f2ef7e85a7aa" url="sf:user=regressionorg@provartesting.com.training;password={password};securityToken={securityToken};environment=SANDBOX;lightningMode=true"/>
+            <connectionUrl secureStorageNodeId="e776f601-dc5a-42f2-ad89-f2ef7e85a7aa" url="sf:user=regressionorg@provartesting.com.training;password={password};environment=SANDBOX;lightningMode=true"/>
           </connectionUrls>
         </connection>
       </connections>
@@ -35,6 +35,7 @@
           <summary>UI</summary>
           <connectionUrls>
             <connectionUrl url="se:baseUrl=http://www.provartesting.com/quickstart/webtocase"/>
+            <connectionUrl envName="test" url="se:baseUrl=http://www.google.com"/>
           </connectionUrls>
         </connection>
         <connection id="3cee6fdc-1dae-42d4-adcc-f8f5b0f19b8a" name="UIconn">
@@ -63,6 +64,18 @@
           <summary/>
           <connectionUrls>
             <connectionUrl secureStorageNodeId="5055b3a0-7866-4421-bae7-e04222ec1e1c" url="google:user=prinkal.gautam@provartesting.com;password={password};authenticationType=PASSWORD"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="webservice">
+      <connections>
+        <connection id="ec3ab75f-4f85-4fff-a740-4149ad431e7d" name="RestConnection">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="restservice:url=https://jsonplaceholder.typicode.com/;authenticationType=NO_AUTHENTICATION">
+              <customHeaders/>
+            </connectionUrl>
           </connectionUrls>
         </connection>
       </connections>

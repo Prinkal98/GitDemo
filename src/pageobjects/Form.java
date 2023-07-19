@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+import com.provar.core.model.ui.api.UiFacet;
 import com.provar.core.testapi.annotations.*;
 
 @Page( title="MyPageObject"                                
@@ -38,5 +38,7 @@ public class MyPageObject {
 	@TextType()
 	@FindBy(xpath = "//div[@id='gform_confirmation_message_14']")
 	public WebElement Thankyou;
+
+	
 			
 }

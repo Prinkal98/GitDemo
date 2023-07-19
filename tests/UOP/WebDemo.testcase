@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="6">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.restservice.WebConnect" name="WebConnect" testItemId="1" title="Web Connect: RestConnection">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">RestConnection</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">RestConnection</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.restservice.RestRequest" name="RestRequest" testItemId="2" title="Web Request (REST): ⇒postGet">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">RestConnection</value>
+        </argument>
+        <argument id="targetValue">
+          <value class="restTarget" uri="rest:untyped?method=GET&amp;bodyStyle=JSON"/>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">postGet</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="statusResultName">
+          <value class="value" valueClass="string">RestResponseStatus</value>
+        </argument>
+        <argument id="restResourceUrl">
+          <value class="value" valueClass="string">posts/1</value>
+        </argument>
+        <argument id="restRequestHeader"/>
+      </arguments>
+      <generatedParameters>
+        <apiParam group="request" internal="true" name="restResourceUrl" title="Resource URL">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="header" internal="true" name="restRequestHeader" passwordVariableAllowed="true" title="Request Header">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.restservice.RestRequest" name="RestRequest" testItemId="3" title="Web Request (REST): ⇒commentPost">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">RestConnection</value>
+        </argument>
+        <argument id="targetValue">
+          <value class="restTarget" uri="rest:untyped?method=POST&amp;bodyStyle=JSON"/>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">commentPost</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="statusResultName">
+          <value class="value" valueClass="string">RestResponseStatus</value>
+        </argument>
+        <argument id="restResourceUrl">
+          <value class="value" valueClass="string">comments/</value>
+        </argument>
+        <argument id="restRequestHeader"/>
+        <argument id="restBody">
+          <value class="value" valueClass="string">{\n    "postId": 101,\n    "id": 101,\n    "name": "icreate",\n    "email": "Eliseo@gardner.biz",\n    "body": "lau"\n  }</value>
+        </argument>
+        <argument id="restAttachments">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+      </arguments>
+      <generatedParameters>
+        <apiParam group="request" internal="true" name="restResourceUrl" title="Resource URL">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="header" internal="true" name="restRequestHeader" passwordVariableAllowed="true" title="Request Header">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="body" name="restBody" title="Body">
+          <type>
+            <textType>
+              <constraints>
+                <valueConstraint name="mimeType">application/json</valueConstraint>
+              </constraints>
+            </textType>
+          </type>
+        </apiParam>
+        <compoundApiParam group="attachments" list="true" name="restAttachments" title="Attachment">
+          <childParams>
+            <apiParam name="name" title="Attachment Name"/>
+            <apiParam name="fileName" title="File Name"/>
+            <apiParam name="contentType" title="Content Type">
+              <type>
+                <choiceType>
+                  <constraints>
+                    <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                    <valueConstraint name="valuesSourceDependencies">com.provar.core.model.base.api.MimeContentType</valueConstraint>
+                  </constraints>
+                </choiceType>
+              </type>
+            </apiParam>
+            <apiParam name="data" title="Data">
+              <type>
+                <urlType/>
+              </type>
+            </apiParam>
+            <apiParam name="base64Encode" title="Encode As Base64">
+              <type>
+                <booleanType/>
+              </type>
+            </apiParam>
+          </childParams>
+        </compoundApiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.restservice.RestRequest" name="RestRequest" testItemId="6" title="Web Request (REST): ⇒postsPatch">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">RestConnection</value>
+        </argument>
+        <argument id="targetValue">
+          <value class="restTarget" uri="rest:untyped?method=PATCH&amp;bodyStyle=JSON"/>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">postsPatch</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="statusResultName">
+          <value class="value" valueClass="string">RestResponseStatus</value>
+        </argument>
+        <argument id="restResourceUrl">
+          <value class="value" valueClass="string">posts/1</value>
+        </argument>
+        <argument id="restRequestHeader"/>
+        <argument id="restBody">
+          <value class="value" valueClass="string">{\n  \n    "name": "change ",\n    "email": "Eliseo@gardner.biz",\n    "body": "lau"\n  }</value>
+        </argument>
+        <argument id="restAttachments">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+      </arguments>
+      <generatedParameters>
+        <apiParam group="request" internal="true" name="restResourceUrl" title="Resource URL">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="header" internal="true" name="restRequestHeader" passwordVariableAllowed="true" title="Request Header">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="body" name="restBody" title="Body">
+          <type>
+            <textType>
+              <constraints>
+                <valueConstraint name="mimeType">application/json</valueConstraint>
+              </constraints>
+            </textType>
+          </type>
+        </apiParam>
+        <compoundApiParam group="attachments" list="true" name="restAttachments" title="Attachment">
+          <childParams>
+            <apiParam name="name" title="Attachment Name"/>
+            <apiParam name="fileName" title="File Name"/>
+            <apiParam name="contentType" title="Content Type">
+              <type>
+                <choiceType>
+                  <constraints>
+                    <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                    <valueConstraint name="valuesSourceDependencies">com.provar.core.model.base.api.MimeContentType</valueConstraint>
+                  </constraints>
+                </choiceType>
+              </type>
+            </apiParam>
+            <apiParam name="data" title="Data">
+              <type>
+                <urlType/>
+              </type>
+            </apiParam>
+            <apiParam name="base64Encode" title="Encode As Base64">
+              <type>
+                <booleanType/>
+              </type>
+            </apiParam>
+          </childParams>
+        </compoundApiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="10" title="Assert: {RestResponseStatus.StatusCode} EqualTo 200">
+      <arguments>
+        <argument id="expectedValue">
+          <value class="variable">
+            <path element="RestResponseStatus"/>
+            <path element="StatusCode"/>
+          </value>
+        </argument>
+        <argument id="comparisonType">
+          <value class="value" valueClass="string">EqualTo</value>
+        </argument>
+        <argument id="actualValue">
+          <value class="value" valueClass="string">200</value>
+        </argument>
+        <argument id="caseSensitive">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="numeric">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="retainDecimals">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="nullGreater">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="matchMultiLine">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="matchDotAll">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="failureMessage"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.restservice.RestRequest" name="RestRequest" testItemId="7" title="Web Request (REST): ⇒postsPut">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">RestConnection</value>
+        </argument>
+        <argument id="targetValue">
+          <value class="restTarget" uri="rest:untyped?method=PUT&amp;bodyStyle=JSON"/>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">postsPut</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="statusResultName">
+          <value class="value" valueClass="string">RestResponseStatus</value>
+        </argument>
+        <argument id="restResourceUrl">
+          <value class="value" valueClass="string">posts/1</value>
+        </argument>
+        <argument id="restRequestHeader"/>
+        <argument id="restBody">
+          <value class="value" valueClass="string">{\n    "postId": 101,\n    "id": 101,\n    "name": "id labore ex et quam laborum",\n    "email": "Eliseo@gardner.biz",\n    "body": "lau"\n  }</value>
+        </argument>
+        <argument id="restAttachments">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+      </arguments>
+      <generatedParameters>
+        <apiParam group="request" internal="true" name="restResourceUrl" title="Resource URL">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="header" internal="true" name="restRequestHeader" passwordVariableAllowed="true" title="Request Header">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="body" name="restBody" title="Body">
+          <type>
+            <textType>
+              <constraints>
+                <valueConstraint name="mimeType">application/json</valueConstraint>
+              </constraints>
+            </textType>
+          </type>
+        </apiParam>
+        <compoundApiParam group="attachments" list="true" name="restAttachments" title="Attachment">
+          <childParams>
+            <apiParam name="name" title="Attachment Name"/>
+            <apiParam name="fileName" title="File Name"/>
+            <apiParam name="contentType" title="Content Type">
+              <type>
+                <choiceType>
+                  <constraints>
+                    <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                    <valueConstraint name="valuesSourceDependencies">com.provar.core.model.base.api.MimeContentType</valueConstraint>
+                  </constraints>
+                </choiceType>
+              </type>
+            </apiParam>
+            <apiParam name="data" title="Data">
+              <type>
+                <urlType/>
+              </type>
+            </apiParam>
+            <apiParam name="base64Encode" title="Encode As Base64">
+              <type>
+                <booleanType/>
+              </type>
+            </apiParam>
+          </childParams>
+        </compoundApiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.restservice.RestRequest" name="RestRequest" testItemId="4" title="Web Request (REST): ⇒postsDelete">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">RestConnection</value>
+        </argument>
+        <argument id="targetValue">
+          <value class="restTarget" uri="rest:untyped?method=DELETE&amp;bodyStyle=JSON"/>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">postsDelete</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="statusResultName">
+          <value class="value" valueClass="string">RestResponseStatus</value>
+        </argument>
+        <argument id="restResourceUrl">
+          <value class="value" valueClass="string">posts/1</value>
+        </argument>
+        <argument id="restRequestHeader"/>
+        <argument id="restBody">
+          <value class="value" valueClass="string">{\n    "postId": 101,\n    "id": 101,\n    "name": "id labore ex et quam laborum",\n    "email": "Eliseo@gardner.biz",\n    "body": "lau"\n  }</value>
+        </argument>
+        <argument id="restAttachments">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+      </arguments>
+      <generatedParameters>
+        <apiParam group="request" internal="true" name="restResourceUrl" title="Resource URL">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="header" internal="true" name="restRequestHeader" passwordVariableAllowed="true" title="Request Header">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="body" name="restBody" title="Body">
+          <type>
+            <textType>
+              <constraints>
+                <valueConstraint name="mimeType">application/json</valueConstraint>
+              </constraints>
+            </textType>
+          </type>
+        </apiParam>
+        <compoundApiParam group="attachments" list="true" name="restAttachments" title="Attachment">
+          <childParams>
+            <apiParam name="name" title="Attachment Name"/>
+            <apiParam name="fileName" title="File Name"/>
+            <apiParam name="contentType" title="Content Type">
+              <type>
+                <choiceType>
+                  <constraints>
+                    <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                    <valueConstraint name="valuesSourceDependencies">com.provar.core.model.base.api.MimeContentType</valueConstraint>
+                  </constraints>
+                </choiceType>
+              </type>
+            </apiParam>
+            <apiParam name="data" title="Data">
+              <type>
+                <urlType/>
+              </type>
+            </apiParam>
+            <apiParam name="base64Encode" title="Encode As Base64">
+              <type>
+                <booleanType/>
+              </type>
+            </apiParam>
+          </childParams>
+        </compoundApiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="11" title="Assert:  EqualTo ">
+      <arguments>
+        <argument id="expectedValue"/>
+        <argument id="comparisonType">
+          <value class="value" valueClass="string">EqualTo</value>
+        </argument>
+        <argument id="actualValue"/>
+        <argument id="caseSensitive">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="numeric">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="retainDecimals">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="nullGreater">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="matchMultiLine">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="matchDotAll">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="failureMessage"/>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>
